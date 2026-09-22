@@ -1,0 +1,5 @@
+/* App-level overrides — brand styles live in bc-brand.css */
+#root {
+  margin: 0;
+  padding: 0;
+}
