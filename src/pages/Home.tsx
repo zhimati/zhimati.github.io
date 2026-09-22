@@ -94,6 +94,7 @@ const COPY: Record<string, L> = {
   contactSite: { cn: "官网：brilliancecast.vercel.app", en: "Website: brilliancecast.vercel.app" },
   qrRed: { cn: "小红书 App 扫码关注：BrillianceCast Media 北京", en: "Scan with RED App: BrillianceCast Media Beijing" },
   qrWeibo: { cn: "微博扫码关注：@BrillianceCast_Media", en: "Scan via Weibo: @BrillianceCast_Media" },
+  qrSite: { cn: "扫码访问官网：brilliancecast.vercel.app", en: "Scan for official site: brilliancecast.vercel.app" },
 };
 
 /* ---------------- 数据 ---------------- */
@@ -857,7 +858,7 @@ export default function Home() {
                 </a>
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 gap-10 mt-14 max-w-3xl">
+            <div className="grid sm:grid-cols-3 gap-10 mt-14 max-w-5xl">
               <div>
                 <img src="/images/卡片_小红书.png" alt="小红书官方账号二维码" className="w-full h-auto" />
                 <p className="text-white/30 text-[11px] mt-3">{t(COPY.qrRed)}</p>
@@ -865,6 +866,10 @@ export default function Home() {
               <div>
                 <img src="/images/卡片_微博.png" alt="微博官方账号二维码" className="w-full h-auto" />
                 <p className="text-white/30 text-[11px] mt-3">{t(COPY.qrWeibo)}</p>
+              </div>
+              <div>
+                <img src="/images/卡片_官网.png" alt="官网二维码" className="w-full h-auto" />
+                <p className="text-white/30 text-[11px] mt-3">{t(COPY.qrSite)}</p>
               </div>
             </div>
           </div>
