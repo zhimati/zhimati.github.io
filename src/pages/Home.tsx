@@ -397,6 +397,7 @@ export default function Home() {
   const [openCase, setOpenCase] = useState<string | null>(null);
   const [stylingCat, setStylingCat] = useState(0);
   const [lightbox, setLightbox] = useState<{ src: string; title: string; sub: string } | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const mainRef = useRef<HTMLElement>(null);
   const t = (p: L) => p[lang];
 
@@ -466,15 +467,57 @@ export default function Home() {
   return (
     <div className="bg-black text-white h-screen flex flex-col lg:flex-row overflow-hidden antialiased">
       {/* 移动端顶栏 */}
-      <header className="lg:hidden flex items-center gap-6 px-5 h-14 border-b border-white/10 shrink-0">
+      <header className="lg:hidden flex items-center px-5 h-14 border-b border-white/10 shrink-0">
         <button onClick={() => switchView("home")} className="shrink-0 cursor-pointer">
           <img src="/images/logo_bc.png" alt="BrillianceCast Media" className="h-5 w-auto" />
         </button>
-        <nav className="flex items-center gap-5 overflow-x-auto flex-1">
-          {VIEWS.map((v) => navBtn(v, true))}
-        </nav>
-        {langToggle}
+        <div className="ml-auto flex items-center gap-5">
+          {langToggle}
+          <button
+            onClick={() => setMenuOpen(true)}
+            aria-label="打开菜单"
+            className="flex flex-col justify-center items-end gap-[5px] w-8 h-8 cursor-pointer"
+          >
+            <span className="block w-6 h-px bg-white" />
+            <span className="block w-6 h-px bg-white" />
+            <span className="block w-4 h-px bg-white" />
+          </button>
+        </div>
       </header>
+
+      {/* 移动端全屏菜单 */}
+      {menuOpen && (
+        <div className="lg:hidden fixed inset-0 z-[90] bg-black flex flex-col">
+          <div className="flex items-center px-5 h-14 border-b border-white/10 shrink-0">
+            <img src="/images/logo_bc.png" alt="BrillianceCast Media" className="h-5 w-auto" />
+            <button
+              onClick={() => setMenuOpen(false)}
+              aria-label="关闭菜单"
+              className="ml-auto text-white/60 hover:text-white text-2xl leading-none w-8 h-8 cursor-pointer transition-colors duration-300"
+            >
+              ×
+            </button>
+          </div>
+          <nav className="flex-1 flex flex-col justify-center px-8 gap-1">
+            {VIEWS.map((v) => (
+              <button
+                key={v.key}
+                onClick={() => { switchView(v.key); setMenuOpen(false); }}
+                className={`text-left font-display text-3xl py-3.5 border-b border-white/5 transition-colors duration-300 cursor-pointer ${
+                  view === v.key ? "text-[var(--bc-yellow)]" : "text-white/80"
+                }`}
+              >
+                {t(v.label)}
+              </button>
+            ))}
+          </nav>
+          <div className="px-8 pb-10">
+            <a href="mailto:brilliancecast@163.com" className="text-white/35 text-xs">
+              brilliancecast@163.com
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* 桌面侧栏 */}
       <aside className="hidden lg:flex w-60 shrink-0 flex-col border-r border-white/10 p-8">
