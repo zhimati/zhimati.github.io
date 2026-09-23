@@ -1,0 +1,15 @@
+{
+  "site": "china",
+  "token": "18d6d265bbc0fb7d8717bba6e5b3bd13",
+  "tokenExpired": "1790080072",
+  "projectName": "brilliancecast-site-1qbxt9fl",
+  "targetPath": "18d6d265bbc0fb7d8717bba6e5b3bd13/brilliancecast-site-1qbxt9fl/1790076473163",
+  "bucket": "eop-trans-sh-prod-1256816668",
+  "region": "ap-shanghai",
+  "cosExpiredTime": 1790078273,
+  "cosExpiration": "2026-09-22T11:57:53Z",
+  "createdAt": "2026-09-22T11:27:53.234Z",
+  "projectId": "makers-ysprznfehuar",
+  "deploymentId": "dpeb3nhay390",
+  "siteUrl": "https://brilliancecast-site-1qbxt9fl-kw2wx998.edgeone.cool?eo_token=3cb7149029338c9f11e6b2eac8f0d6d8&eo_time=1790076527"
+}

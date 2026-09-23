@@ -91,10 +91,10 @@ const COPY: Record<string, L> = {
     cn: "工作时间：周一至周六 10:00 — 20:00",
     en: "Working Hours: Mon – Sat, 10:00 – 20:00 (GMT+8)",
   },
-  contactSite: { cn: "官网：brilliancecast.vercel.app", en: "Website: brilliancecast.vercel.app" },
+  contactSite: { cn: "官网：www.brilliancecast.cn", en: "Website: www.brilliancecast.cn" },
   qrRed: { cn: "小红书 App 扫码关注：BrillianceCast Media 北京", en: "Scan with RED App: BrillianceCast Media Beijing" },
   qrWeibo: { cn: "微博扫码关注：@BrillianceCast_Media", en: "Scan via Weibo: @BrillianceCast_Media" },
-  qrSite: { cn: "扫码访问官网：brilliancecast.vercel.app", en: "Scan for official site: brilliancecast.vercel.app" },
+  qrSite: { cn: "扫码访问官网：www.brilliancecast.cn", en: "Scan for official site: www.brilliancecast.cn" },
 };
 
 /* ---------------- 数据 ---------------- */
@@ -896,7 +896,7 @@ export default function Home() {
               <p>{t(COPY.contactAddr)}</p>
               <p>{t(COPY.contactHours)}</p>
               <p>
-                <a href="https://brilliancecast.vercel.app/" target="_blank" rel="noreferrer" className="hover:text-[var(--bc-yellow)] transition-colors duration-300">
+                <a href="https://www.brilliancecast.cn/" target="_blank" rel="noreferrer" className="hover:text-[var(--bc-yellow)] transition-colors duration-300">
                   {t(COPY.contactSite)}
                 </a>
               </p>
